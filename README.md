@@ -22,11 +22,11 @@
 - [x] Não deve ser possível listar os usúario cadastrados, se o usúario requisitante não for ADM.
 - [x] Não deve ser possível listar os usúario cadastrados, se o usúario requisitante não for ADM e não tiver um ID válido.
 
-# Para rodar essa aplicação faça:
+# Para rodar essa aplicação siga os seguintes passos:
 
 - Copie a url do repositório na aba `CODE`.
 - Com o git instalado, execute o seguinte comando => `git clone "Aqui vai a url copiada acima`.
-- Na sua IDE preferida, abra o terminal do `git`, e execute o seguinte comando => `yarn`, para baixar as dependências da aplicação.
+- Com o `Nodejs` instalado, Na sua IDE preferida, abra o terminal do `git`, e execute o seguinte comando => `yarn`, para baixar as dependências da aplicação.
 - Para rodar o projeto execute o seguinte comando => `yarn run dev`.
 - Para testar o funcional da aplicação será necessário instalar o software `Insomnia` e criar as rotas da aplicação.
 - Para rodar os testes unitarios das rotas da aplicação execute o seguinte comando => `yarn run test`. 
