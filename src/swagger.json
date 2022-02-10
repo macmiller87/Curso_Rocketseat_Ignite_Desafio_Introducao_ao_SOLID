@@ -1,0 +1,99 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API USERS",
+        "description": "This is the API Users documentation.",
+        "version": "1.0.0",
+        "contact": {
+            "email": "macamagolf@gmail.com"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "tags": ["users"],
+                "summary": "Create user whith name and email.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "summary": "Mandatory fields for creating a user.",
+                            "example": {
+                                "name": "Macmiller Duarte",
+                                "email": "macamagolf@gmail.com"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created whith success!",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "admin": {
+                                            "type": "boolean"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "created_at": {
+                                            "type": "string"
+                                        },
+                                        "updated_at": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "admin": "false",
+                                    "id": "95d9913b-13f6-42c7-93b1-bcd7fc07b223",
+                                    "name": "Macmiller Duarte",
+                                    "email": "macamagolf@gmail.com",
+                                    "created_at": "2022-02-10T03:43:29.999Z",
+                                    "updated_at": "2022-02-10T03:43:29.999Z"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "This email is already in use!",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "error": "This email is already in use!"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
