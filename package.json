@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "keywords": [],
-  "author": "Macmiller Duarte de Andrade",
+  "author": "Macmiller Duarte de Andrade", 
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "lint:fix": "eslint --fix . --ext ts,tsx",
