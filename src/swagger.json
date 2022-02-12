@@ -8,10 +8,16 @@
             "email": "macamagolf@gmail.com"
         }
     },
-    "paths": {
+    "tags": [
+        {
+            "name": "users",
+            "description": "users management"
+        }
+    ],
+      "paths": {
         "/users": {
             "post": {
-                "tags": ["User management"],
+                "tags": ["users"],
                 "summary": "Create user whith name and email.",
                 "requestBody": {
                     "required": true,
@@ -96,9 +102,9 @@
                 }
             },
             "get": { 
-                "tags": ["      "],
+                "tags": ["users"],
                 "summary": "List all users",
-                "description": "Only admin can access!",
+                "description": "Only `admin` can access!",
                 "parameters": [
                     {
                         "in": "header",
@@ -176,6 +182,154 @@
                                 },
                                 "example": {
                                     "error": "User Id is not Admin!"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{user_id}": { 
+            "get": {
+                "tags": ["users"],
+                "summary": "Return a specific user",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "user_id",
+                        "required": true,
+                        "description": "User ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operation performed successfully!",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "admin": {
+                                            "type": "boolean"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type":"string"
+                                        },
+                                        "created_at": {
+                                            "type": "string"
+                                        },
+                                        "updated_at": {
+                                            "type":"string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "admin": "false",
+                                    "id": "3af1bf79-360b-414e-af44-70b8af2afe3b",
+                                    "name": "Macmiller Duarte",
+                                    "email": "macamagolf@gmail.com",
+                                    "created_at": "2022-02-12T00:08:36.681Z",
+                                    "updated_at": "2022-02-12T00:08:36.681Z"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                       "description":"User not found!",
+                       "content": {
+                           "application/json": {
+                               "schema": {
+                                   "type": "object",
+                                   "properties": {
+                                       "error": {
+                                           "type": "string"
+                                       }
+                                   }
+                               },
+                               "example": {
+                                   "error": "User not found!"
+                               }
+                           }
+                       }
+                    }
+                }
+            }
+        },
+        "/users/{user_id}/admin": {
+            "patch": {
+                "tags": ["users"],
+                "summary": "Make admin a user",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "user_id",
+                        "required": true,
+                        "description": "User ID",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operation performed successfully!",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "admin": {
+                                            "type": "boolean"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "created_at": {
+                                            "type": "string"
+                                        },
+                                        "updated_at": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "example": {
+                                "admin": "true",
+                                "id": "3af1bf79-360b-414e-af44-70b8af2afe3b",
+                                "name": "Macmiller Duarte",
+                                "email": "macamagolf@gmail.com",
+                                "created_at": "2022-02-12T00:08:36.681Z",
+                                "updated_at": "2022-02-12T00:08:36.681Z"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found!",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "error": "User not found!"
                                 }
                             }
                         }
