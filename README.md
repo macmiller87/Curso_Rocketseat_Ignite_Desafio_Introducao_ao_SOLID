@@ -29,4 +29,8 @@
 - Com o `Nodejs` e o `Yarn` instalados, Na sua IDE preferida, abra o terminal do `git`, e execute o seguinte comando => `yarn`, para baixar as dependências da aplicação.
 - Para rodar o projeto execute o seguinte comando => `yarn run dev`.
 - Para testar o funcional da aplicação será necessário instalar o software `Insomnia` e criar as rotas da aplicação.
-- Para rodar os testes unitarios das rotas da aplicação execute o seguinte comando => `yarn run test`. 
+- Para rodar os testes unitarios das rotas da aplicação execute o seguinte comando => `yarn run test`.
+
+# Para rodar a documentação da aplicação
+
+- Com a aplicação já startada  ... NO seu navegador de internet digite => `http://localhost:8080/api-docs`
