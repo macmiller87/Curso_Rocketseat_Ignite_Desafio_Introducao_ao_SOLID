@@ -3,6 +3,8 @@
 - Nessa aplicação foi feita uma API, que Cria e Lista Usúarios, onde o usúario pode cadastrar um name, email, e também é possível tornar esse usúario ADMIN, a aplicação também gera um ID para esse usúario, pegando também o horário automáticamente no sistema.
 - O Usúario só pode listar todos os usúarios criados, se ele for um usúario Admin. 
 
+## [Desafio 1 Módulo Chapter 2: Introdução ao SOLID](https://www.notion.so/Desafio-01-Introdu-o-ao-SOLID-3b9be286fac0482ca3b275473ddd2d72)
+## [Desafio 2 Módulo Chapter 2: Documentando com Swagger](https://www.notion.so/Desafio-02-Documentando-com-Swagger-8ce869ea608743e292851bd951f3239f)
 # Ferramentas
 
 - Foi utilizado o Typescript/Javascript como linguagem para desenvolver o Backend.
